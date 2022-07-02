@@ -20,15 +20,14 @@ const Navbar = () => {
     <div className="fixed w-full h-20 z-[100]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <div className="p-10">
-          <Image src="/../public/favicon.ico" alt="/" width="50" height="50" />
+          <div className="text-lg">
+            louis<a className="text-lg font-extrabold">Unlimited</a>
+          </div>
         </div>
         <div className="p-5">
           <ul className="hidden md:flex">
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b"> Home </li>
-            </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
             </Link>
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">
@@ -61,16 +60,10 @@ const Navbar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-              <Image
-                src="/../public/favicon.ico"
-                alt="/"
-                width="35"
-                height="35"
-              />
-              <div
-                onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer"
-              >
+              <div className="text-md">
+                louis<a className="text-lg font-extrabold">Unlimited</a>
+              </div>
+              <div onClick={handleNav} className="p-5 cursor-pointer">
                 <AiOutlineClose />
               </div>
             </div>
@@ -85,10 +78,6 @@ const Navbar = () => {
               </Link>
 
               <Link href="/">
-                <li className="py-4 text-sm"> About </li>
-              </Link>
-
-              <Link href="/">
                 <li className="py-4 text-sm"> Projects </li>
               </Link>
 
@@ -96,21 +85,21 @@ const Navbar = () => {
                 <li className="py-4 text-sm"> Contact </li>
               </Link>
             </ul>
-            <div className="pt-40 ">
+            <div className="pt-40">
               <p className="uppercase tracking-widest text-[#5651e5]">
                 Lect&apos;s connect
               </p>
-              <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+              <div className="flex items-center justify-between my-4 w-full sm:w-[80%] text-2xl">
+                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <FaLinkedinIn />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <FaGithub />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                {/*<div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <AiOutlineMail />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+        </div>*/}
+                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <AiFillInstagram />
                 </div>
               </div>
