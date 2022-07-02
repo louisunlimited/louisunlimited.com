@@ -19,9 +19,9 @@ const LandingPage = () => {
             dolores et quas molestias excepturi sint occaecati cupiditate non
             provident.&quot;
           </p>
-          <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
+          <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-3xl">
             <a
-              className="rounded-full shadow-lg shadow-[#5651e57f] p-6 cursor-pointer hover:scale-105 ease-in duration-300"
+              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
               href="https://www.linkedin.com/in/yu-qian-661741223/"
               target="_blank"
               rel="noreferrer"
@@ -29,7 +29,7 @@ const LandingPage = () => {
               <FaLinkedinIn />
             </a>
             <a
-              className="rounded-full shadow-lg shadow-[#5651e57f] p-6 cursor-pointer hover:scale-105 ease-in duration-300"
+              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
               href="https://github.com/louisunlimited"
               target="_blank"
               rel="noreferrer"
@@ -37,7 +37,7 @@ const LandingPage = () => {
               <FaGithub />
             </a>
             <a
-              className="rounded-full shadow-lg shadow-[#5651e57f] p-6 cursor-pointer hover:scale-105 ease-in duration-300"
+              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
               href="https://www.instagram.com/louissss_yu/"
               target="_blank"
               rel="noreferrer"
