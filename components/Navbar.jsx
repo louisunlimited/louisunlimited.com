@@ -1,13 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import {
-  AiOutlineClose,
-  AiOutlineMenu,
-  AiOutlineMail,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { social } from "../public/data";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -20,13 +14,15 @@ const Navbar = () => {
     <div className="fixed w-full h-20 z-[100] bg-[#17171f]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <div className="p-10">
-          <div className="text-lg">
-            louis<a className="text-lg font-extrabold">Unlimited</a>
-          </div>
+          <Link href="/#home">
+            <div className="text-lg cursor-pointer">
+              louis<a className="text-lg font-extrabold">Unlimited</a>
+            </div>
+          </Link>
         </div>
         <div className="p-5">
           <ul className="hidden md:flex">
-            <Link href="/">
+            <Link href="/#home">
               <li className="ml-10 text-sm uppercase hover:border-b"> Home </li>
             </Link>
             <Link href="/">
@@ -73,16 +69,22 @@ const Navbar = () => {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-              <Link href="/">
-                <li className="py-4 text-sm"> Home </li>
+              <Link href="/#home">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Home
+                </li>
               </Link>
 
               <Link href="/">
-                <li className="py-4 text-sm"> Projects </li>
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Projects
+                </li>
               </Link>
 
               <Link href="/">
-                <li className="py-4 text-sm"> Contact </li>
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Contact
+                </li>
               </Link>
             </ul>
             <div className="pt-40">
@@ -90,18 +92,20 @@ const Navbar = () => {
                 Lect&apos;s connect
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%] text-2xl">
-                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaLinkedinIn />
-                </div>
-                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaGithub />
-                </div>
-                {/*<div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <AiOutlineMail />
-        </div>*/}
-                <div className="p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <AiFillInstagram />
-                </div>
+                {social.map((item, index) => {
+                  const { href, icon } = item;
+                  return (
+                    <a
+                      className="p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={index}
+                    >
+                      {icon}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
