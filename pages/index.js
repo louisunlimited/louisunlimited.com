@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import LandingPage from '../components/LandingPage'
+import Head from "next/head";
+import Image from "next/image";
+import Navbar from "../components/Navbar";
+import LandingPage from "../components/LandingPage";
+import Skills from "../components/Skills";
 
 export default function Home() {
   return (
@@ -12,10 +13,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar/>
+      <Navbar />
 
-      <LandingPage/>
+      <LandingPage />
 
+      <Skills />
     </div>
-  )
+  );
 }
