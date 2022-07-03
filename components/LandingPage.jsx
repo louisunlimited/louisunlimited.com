@@ -3,11 +3,16 @@ import { social } from "../public/data";
 
 const LandingPage = () => {
   return (
-    <div className="w-full h-screen text-center">
+    <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <h1 className="py-4 text-white-700">
-            Hi, I&apos;m <span className="text-[#5651e5]">Louis</span>
+            Hi, I&apos;m&nbsp;
+            <span className="hover:animate-pulse">
+              <a className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-default">
+                Louis
+              </a>
+            </span>
           </h1>
           <h1 className="py-2 text-white-700">
             A Student / Independent Developer
