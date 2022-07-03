@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import { social } from "../public/data";
@@ -23,12 +24,12 @@ const Footer = () => {
               );
             })}
           </div>
-
-          <div className="text-lg">
-            louis<a className="text-lg font-extrabold">Unlimited</a>
-          </div>
-
-          <p>&copy; 2022 Louis Qian. All Rights Reserved</p>
+          <Link href="/#home">
+            <div className="text-lg cursor-pointer">
+              louis<a className="text-lg font-extrabold">Unlimited</a>
+            </div>
+          </Link>
+          <p>&copy; 2022 Louis Qian. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
