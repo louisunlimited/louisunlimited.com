@@ -1,6 +1,5 @@
 import React from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { social } from "../public/data";
 
 const LandingPage = () => {
   return (
@@ -20,30 +19,20 @@ const LandingPage = () => {
             provident.&quot; <br></br> -- Louis (Yes, I said that)
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-3xl">
-            <a
-              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
-              href="https://www.linkedin.com/in/yu-qian-661741223/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
-              href="https://github.com/louisunlimited"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
-              href="https://www.instagram.com/louissss_yu/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillInstagram />
-            </a>
+            {social.map((item, index) => {
+              const { href, icon } = item;
+              return (
+                <a
+                  className="p-6 cursor-pointer hover:scale-105 ease-in duration-300"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={index}
+                >
+                  {icon}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
