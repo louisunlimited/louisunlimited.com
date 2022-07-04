@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full h-20 z-[100] bg-[#17171f]">
+    <div className="fixed w-full h-20 z-[100] bg-[#0d0d18]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <div className="p-10">
           <Link href="/#home">
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] m:w-[45%] h-screen bg-[#17171f] p-10 ease-in duration-500"
+              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] m:w-[45%] h-screen bg-[#0d0d18]/90 p-10 ease-in duration-500"
               : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
           }
         >

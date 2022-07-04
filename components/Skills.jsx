@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Skills = () => {
   return (
-    <section className="bg-[#27273d] py-12">
+    <section className="bg-[#0d0d18] py-12">
       <div className=" container mx-auto">
         <div className="grid md:grid-flow-row grid-cols-5">
           {skills.map((skill, index) => {
