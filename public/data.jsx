@@ -18,11 +18,11 @@ export const social = [
 ];
 
 // skill images
-import SkillSwift from "./assets/swift.svg";
-import SkillNextjs from "./assets/next.js.svg";
-import SkillHtml from "./assets/html-5.svg";
-import SkillCSS3 from "./assets/css3.svg";
-import SkillCpp from "./assets/cpp.svg";
+import SkillSwift from "./assets/Socials/swift.svg";
+import SkillNextjs from "./assets/Socials/next.js.svg";
+import SkillHtml from "./assets/Socials/html-5.svg";
+import SkillCSS3 from "./assets/Socials/css3.svg";
+import SkillCpp from "./assets/Socials/cpp.svg";
 
 export const skills = [
   { image: SkillSwift },
