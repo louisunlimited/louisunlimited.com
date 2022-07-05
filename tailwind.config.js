@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         "space-backdrop": "url('../public/space-bg.png')",
       },
+      transitionTimingFunction: {
+        "planet-expo": "cubic-bezier(0.07, 1.17, 1, 1)",
+      },
     },
   },
   plugins: [],
