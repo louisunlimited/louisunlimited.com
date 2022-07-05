@@ -1,5 +1,5 @@
 //social icons
-import { AiFillInstagram } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export const social = [
@@ -12,8 +12,8 @@ export const social = [
     href: "https://github.com/louisunlimited",
   },
   {
-    icon: <AiFillInstagram />,
-    href: "https://www.instagram.com/louissss_yu/",
+    icon: <AiOutlineMail />,
+    href: "mailto: yuq4@illinois.edu",
   },
 ];
 
