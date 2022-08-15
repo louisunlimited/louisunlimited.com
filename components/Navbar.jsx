@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="fixed w-full h-20 z-[100] bg-[#0d0d18]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <div className="p-10">
-          <Link href="/#home">
+          <Link href="/">
             <div className="text-lg cursor-pointer">
               louis<a className="text-lg font-extrabold">Unlimited</a>
             </div>
@@ -22,9 +22,12 @@ const Navbar = () => {
         </div>
         <div className="p-5">
           <ul className="hidden md:flex">
-            <Link href="/#home">
+            <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b"> Home </li>
             </Link>
+            {/* <Link href="/blog">
+              <li className="ml-10 text-sm uppercase hover:border-b">Posts</li>
+            </Link> */}
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b line-through">
                 Projects
@@ -69,11 +72,17 @@ const Navbar = () => {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-              <Link href="/#home">
+              <Link href="/">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
                   Home
                 </li>
               </Link>
+
+              {/* <Link href="/blog">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Posts
+                </li>
+              </Link> */}
 
               <Link href="/">
                 <li
