@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <DefaultSeo {...SEO} />
       <Navbar />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
