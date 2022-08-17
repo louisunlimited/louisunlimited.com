@@ -21,20 +21,25 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="p-5">
-          <ul className="hidden md:flex">
+          <ul className="hidden md:flex list-none">
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b"> Home </li>
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                {" "}
+                Home{" "}
+              </li>
             </Link>
-            {/* <Link href="/blog">
-              <li className="ml-10 text-sm uppercase hover:border-b">Posts</li>
-            </Link> */}
+            <Link href="/blog">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                Posts
+              </li>
+            </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b line-through">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer line-through">
                 Projects
               </li>
             </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b line-through">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer line-through">
                 Contact
               </li>
             </Link>
@@ -78,11 +83,11 @@ const Navbar = () => {
                 </li>
               </Link>
 
-              {/* <Link href="/blog">
+              <Link href="/blog">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
                   Posts
                 </li>
-              </Link> */}
+              </Link>
 
               <Link href="/">
                 <li
