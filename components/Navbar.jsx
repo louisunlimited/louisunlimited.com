@@ -76,7 +76,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="py-4 flex flex-col">
-            <ul className="uppercase">
+            <ul className="uppercase list-none">
               <Link href="/">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
                   Home
