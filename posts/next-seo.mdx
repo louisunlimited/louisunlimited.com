@@ -7,8 +7,8 @@ tags: [next.js, SEO, Next-SEO]
 ---
 
 #### Why SEO?
-You've probably heard of Search Engine Optimization (SEO) is a vital part of a website inorder to maintain a popular online presence. 
-This is because modern search engines basically craws your entire website and looks for keywords in the content of your website to provide their users with the best possible results.
+You've probably heard that Search Engine Optimization (SEO) is a vital part of a website in order to maintain a popular online presence. 
+This is because modern search engines crawl your entire website and look for keywords in your website's content to provide users with the best possible results.
 <br/>
 Hence, SEO is all about helping search engines understand and present content, making your website appear more relevant to users (rank higher in search results).
 
@@ -37,27 +37,27 @@ To understand what a meta tag is, you need to know what a normal HTML document l
 ```html
 <!DOCTYPE html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is a sample description.">
-  <title>Document</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="This is a sample description.">
+ <title>Document</title>
 </head>
 <body>
-  <h1>Hello World</h1>
+ <h1>Hello World</h1>
 </body>
 ```
 Normally, a HTML document consists of a `<head>` and a `<body>`. The head contains meta tags, title, and other information that helps search engines understand the content of the page that's not shown to users (except for `title` and `favicons`), while the body contains the content that is shown to users.
 <br/>
-Hence, the above code shown represents a normal HTML page showing "Hello World", and a `<head>` tag that contains several `<meta>` tags that provides basic informations about our website: charset, viewport, and descriptions.
+Hence, the above code shown represents a normal HTML page showing "Hello World" and a `<head>` tag that contains several `<meta>` tags that provide basic information about our website: charset, viewport, and descriptions.
 <br/>
-Therefore, a **`<meta>`** tag is a piece of HTML that is used to provide information to search engines about the content of your website. They are not shown to the user, but can be crawed by search engines to help them understand the content of your website.
+Therefore, a **`<meta>`** tag is a piece of HTML that is used to provide information to search engines about the content of your website. They are not shown to the user but can be crawled by search engines to help them understand the content of your website.
 <br/>
 
-There are several types of meta tags (with different names), all of which are pretty self explanatory, and my goal here is to go through the implementations of meta tags using 'Next-SEO' plugin.
+There are several types of meta tags (with different names), all of which are pretty self-explanatory, and my goal here is to go through the implementations of meta tags using the 'Next-SEO' plugin.
 
 <br/>
 #### next-seo
-The `next-seo` plugin is a plugin that provides SEO functionality to Next.js. It it very easy to use, and it is very powerful.
+The `next-seo` plugin is a plugin that provides SEO functionality to Next.js. It is very easy to use, and it is very powerful.
 
 Here's the github repository of the plugin: <u>[next-seo](https://github.com/garmeeh/next-seo)</u>, and you can also find the documentation on the <u>[npmjs website](https://www.npmjs.com/package/next-seo)</u>.
 
@@ -78,13 +78,13 @@ After downloading the plugin, you can:
 ###### Default SEO config
 We can create a default SEO config for all pages by creating a file called `next-seo.config.js` in the root directory of the project.
 
-Then, we can create a SEO object that contains the desired SEO configurations as such:
+Then, we can create an SEO object that contains the desired SEO configurations as such:
 ```js "next-seo.config.js"
 const SEO = {
-  title: "This is a title",
-  description:
-    "The best description ever!",
-    // more configs like OpenGraph, Twitter Cards are also supported
+ title: "This is a title",
+ description:
+ "The best description ever!",
+ // more configs like OpenGraph, Twitter Cards are also supported
 };
 
 export default SEO;
@@ -99,58 +99,59 @@ import import { DefaultSeo } from 'next-seo';
 
 // and we can simply add them as such 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
-    </>
-  );
+ return (
+ <>
+ <DefaultSeo {...SEO} />
+ <Component {...pageProps} />
+ </>
+ );
 }
 
 export default MyApp;
 ```
 <br/>
-Now, when you visit the website, and hit 'right click -> inspect', you will see something like the following in your `<head>` tag:
+Now, when you visit the website and hit 'right click -> inspect,' you will see something like the following in your `<head>` tag:
 ```html
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta property="og:title" content="This is a title">
-    <meta property="og:description" content="The best description ever!">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <meta property="og:title" content="This is a title">
+ <meta property="og:description" content="The best description ever!">
 </head>
 ```
 <br/>
-Congratulations! You have successfully implemented default on-page SEO using 'Next-SEO' plugin. Now every page will have thoese meta tages included in its `<head>` tag.
+Congratulations! You have successfully implemented default on-page SEO using the 'Next-SEO' plugin. Now every page will have these meta tags included in its `<head>` tag.
 <br/>
 
 ###### Custom SEO config
 For a website with multiple pages and dynamic data, we can create a custom SEO config for each page.
 
-The process is the same as the default SEO config, just add `<NextSEO />` tag to the page component with different params.
+The process is the same as the default SEO config; just add `<NextSEO />` tag to the page component with different params.
 ```js 
 // import NextSEO
 import { NextSeo } from "next-seo";
 
 // and we can simply add them as such
 function MyPage({props}) {
-  return (
-    <>
-      <NextSeo
-        title={props.title}
-        description={props.description}
-        // more params here
-      />
-      <h1>Hello! SEO-Optimized Page!</h1>
-    </>
-  );
+ return (
+ <>
+ <NextSeo
+ title={props.title}
+ description={props.description}
+ // more params here
+ />
+ <h1>Hello! SEO-Optimized Page!</h1>
+ </>
+ );
 }
 ```
 <br/>
 
-Now the meta tags will contain dynamic data passed in from the page component.
+The meta tags will now contain dynamic data from the page component.
 <br/>
 
 #### Conclusion
 'next-seo' provides a simple way to implement on-page SEO using `<DefaultSEO>` and `<NextSeo />` components. 
-It is very easy to use, and it is important for all websites that's looking for better search performance and general public accessibility.
+It is very easy to use, and it is important for all websites that are looking for better search performance and general public accessibility.
+
