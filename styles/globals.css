@@ -58,4 +58,7 @@ html{
   /* button {
     @apply cursor-pointer border bg-slate-100 hover:bg-slate-200 p-2 rounded-sm
   } */
+  form {
+    @apply flex flex-col border-solid border-gray-300 max-w-[1240px] w-full p-10
+  }
 }
