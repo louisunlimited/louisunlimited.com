@@ -12,12 +12,22 @@ import "highlight.js/styles/atom-one-dark.css";
 
 // SEO support
 import { NextSeo } from "next-seo";
+import { ArticleJsonLd } from "next-seo";
 
-const PlogPage = ({ frontMatter, source }) => {
+const PlogPage = ({ frontMatter, source, slug }) => {
   return (
     <>
       <NextSeo
         title={frontMatter.title}
+        description={frontMatter.description}
+      />
+      <ArticleJsonLd
+        type="Blog"
+        title={frontMatter.title}
+        url={`https://www.louisunlimited.com/blog/${slug}`}
+        datePublished={frontMatter.date}
+        dateModified={frontMatter.date}
+        authorName="Louis Qian"
         description={frontMatter.description}
       />
       <div className="pt-24 h-full max-w-[1140px] mx-auto text-lg">
@@ -85,6 +95,7 @@ export async function getStaticProps({ params }) {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: params.slug,
     },
   };
 }
