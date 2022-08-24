@@ -26,7 +26,7 @@ export default function blog({ posts }) {
                   {post.frontMatter.title}
                 </h4>
                 <p className="">{post.frontMatter.date}</p>
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`/blogs/${post.slug}`}>
                   <p className="underline cursor-pointer w-max">Read More</p>
                 </Link>
               </div>
