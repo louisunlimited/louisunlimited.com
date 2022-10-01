@@ -33,21 +33,21 @@ const Navbar = () => {
                 Posts
               </li>
             </Link>
-            <Link href="/">
+            {/* <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer line-through">
                 Projects
               </li>
-            </Link>
+            </Link> */}
             <Link href="/search">
               <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
                 Search
               </li>
             </Link>
-            <Link href="/">
+            {/* <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer line-through">
                 Contact
               </li>
-            </Link>
+            </Link> */}
           </ul>
           <div onClick={handleNav} className="md:hidden">
             <AiOutlineMenu size={25} />
@@ -100,23 +100,23 @@ const Navbar = () => {
                 </li>
               </Link>
 
-              <Link href="/">
+              {/* <Link href="/">
                 <li
                   onClick={() => setNav(false)}
                   className="py-4 text-sm line-through"
                 >
                   Projects
                 </li>
-              </Link>
+              </Link> */}
 
-              <Link href="/">
+              {/* <Link href="/">
                 <li
                   onClick={() => setNav(false)}
                   className="py-4 text-sm line-through"
                 >
                   Contact
                 </li>
-              </Link>
+              </Link> */}
             </ul>
             <div className="pt-40">
               <p className="uppercase tracking-widest text-[#5651e5]">
