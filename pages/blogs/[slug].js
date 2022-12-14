@@ -24,7 +24,7 @@ const PlogPage = ({ frontMatter, source, slug }) => {
       <ArticleJsonLd
         type="Blog"
         title={frontMatter.title}
-        url={`https://www.louisunlimited.com/blog/${slug}`}
+        url={`https://www.louisunlimited.com/blogs/${slug}`}
         datePublished={frontMatter.date}
         dateModified={frontMatter.date}
         authorName="Louis Qian"
