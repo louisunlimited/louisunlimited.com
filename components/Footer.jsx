@@ -29,7 +29,7 @@ const Footer = () => {
               louis<a className="text-lg font-extrabold">Unlimited</a>
             </div>
           </Link>
-          <p>&copy; 2022 Louis Qian. All Rights Reserved.</p>
+          <p>&copy; 2023 Louis Qian. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
