@@ -4,13 +4,21 @@ import { DefaultSeo } from "next-seo";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import PlausibleProvider from "next-plausible";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <DefaultSeo {...SEO} />
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <PlausibleProvider
+        domain="louisunlimited.com"
+        selfHosted={true}
+        customDomain="http://louisearch.com:8000"
+      >
+        <DefaultSeo {...SEO} />
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </PlausibleProvider>
     </>
   );
 }
