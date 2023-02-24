@@ -10,7 +10,7 @@ export default function Home() {
         <script
           defer
           data-domain="louisunlimited.com"
-          src="https://www.louisearch.com/js/script.js"
+          src="http://139.144.30.47:8000//js/script.js"
         ></script>
       </Head>
 
