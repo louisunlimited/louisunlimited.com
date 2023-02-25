@@ -29,6 +29,7 @@ const PlogPage = ({ frontMatter, source, slug }) => {
         dateModified={frontMatter.date}
         authorName="Louis Qian"
         description={frontMatter.description}
+        images={[frontMatter.image]}
       />
       <div className="pt-24 h-full max-w-[1140px] mx-auto text-lg">
         <div className="p-5">
