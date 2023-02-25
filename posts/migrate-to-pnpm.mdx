@@ -1,0 +1,76 @@
+---
+title: "Migrating from npm to pnpm"
+author: "Louis Qian"
+date: "2023-02-25"
+description: "pnpm is a fast, disk space efficient package manager, better than npm!"
+tags: [pnpm, npm, package-manager]
+---
+
+#### What is pnpm?
+
+<u>[pnpm](https://pnpm.io/)</u> is a fast, disk space efficient package manager, better than npm! 
+<br/>
+
+#### Why did I switch from npm to pnpm?
+Though I don't really have an issue working with npm, I always hoped that there would be a better package manager out there that provides a much better DX (Developer Experience). And I think pnpm is the one that I've been looking for.
+<br />
+__Some of the reasons why I switched from npm to pnpm are:__
+ - pnpm is faster than npm
+ - pnpm is disk space efficient (very important for me!!)
+
+<br/>
+
+pnpm uses symbolic links to link packages to the node_modules folder. This means that if, for example, two of your dependencies share the same package C, pnpm will make sure that only one copy of C is installed. Rather than downloading it twice like what npm does. This is the main reason for why pnpm is disk space efficient.
+
+<br/>
+
+#### How to migrate from npm to pnpm?
+
+It's actually pretty easy to migrate from npm to pnpm. Follow these steps to get started:
+
+- Install pnpm
+```bash
+npm install -g pnpm
+or
+brew install pnpm
+or
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+<br/>
+
+- Remove node_modules
+```bash
+npx npkill // if you have npx installed
+or
+rm -rf node_modules
+```
+<br/>
+
+- Run
+```bash
+pnpm import
+```
+This will create a `pnpm-lock.yaml` file in your project directory based on your `packages-lock.json` file.
+<br/>
+So now it's safe to delete your `package-lock.json` file.
+
+- Remove package-lock.json
+```bash
+rm package-lock.json
+```
+
+<br/>
+
+- And Finally
+```bash
+pnpm install
+```
+<br/>
+##### Congratulations! You have successfully migrated from npm to pnpm! 🎉🎉🎉
+<br/>
+Now you can try `pnpm run dev` or `pnpm run build` to see if everything works as expected.
+<br/>
+Optionally, you can add a `.npmrc` file to your project directory for custom configurations. For example, you can add this line to your `.npmrc` file to make sure your depenency peers are automatically installed.
+```bash
+auto-install-peers=true
+```
