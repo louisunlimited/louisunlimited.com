@@ -27,6 +27,7 @@
     "fs": false
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.14.1",
     "autoprefixer": "^10.4.7",
     "eslint": "8.19.0",
