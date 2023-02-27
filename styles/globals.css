@@ -45,24 +45,10 @@ html {
     @apply text-base sm:text-lg md:text-xl;
   }
 
-  ul {
-    @apply list-disc;
-  }
-
-  blockquote {
-    @apply px-4 py-4 border-l-4 border-gray-300;
-  }
-
   code {
     @apply font-mono bg-slate-600;
   }
 
-  q {
-    @apply font-serif;
-  }
-  /* button {
-    @apply cursor-pointer border bg-slate-100 hover:bg-slate-200 p-2 rounded-sm
-  } */
   form {
     @apply flex flex-col border-solid border-gray-300 max-w-[1240px] w-full p-10;
   }

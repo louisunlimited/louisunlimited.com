@@ -40,7 +40,7 @@ const PlogPage = ({ frontMatter, source, slug }) => {
             {frontMatter.tags.toString().replaceAll(",", " · ")}
           </p>
         </div>
-        <div className="p-5">
+        <div className="p-5 w-full h-full prose prose-invert lg:prose-lg mx-auto max-w-none">
           <MDXRemote {...source} />
         </div>
         <Link href="/blog">

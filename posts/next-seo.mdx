@@ -10,7 +10,7 @@ image: ""
 #### Why SEO?
 You've probably heard that Search Engine Optimization (SEO) is a vital part of a website in order to maintain a popular online presence. 
 This is because modern search engines crawl your entire website and look for keywords in your website's content to provide users with the best possible results.
-<br/>
+
 Hence, SEO is all about helping search engines understand and present content, making your website appear more relevant to users (rank higher in search results).
 
 Here's a more in-depth SEO document that you can read to understand the basics of SEO published by Google: [Search Engine Optimization (SEO) Starter Guide](https://developers.google.com/search/docs/beginner/seo-starter-guide)
@@ -19,20 +19,20 @@ There are many ways to improve your SEO, generally split into two categories:
 - On-page SEO
 - Off-page SEO
 
-<br/>
+
 ###### On-page SEO
 On-page SEO is the SEO that is done on the page itself. For example, you can add meta tags to your page to help search engines understand the content of your page, 
 or provide engaing contents/keywords/images/links to increase credibility and engagements of your page.
 
-<br/>
+
 ###### Off-page SEO
 Off-page SEO is the SEO that is done on outside the website itself. 
 For example, you might want to add backlinks to your website, or engage in social media marketing and linked brand mentions to increase your website's visibility and credibility.
 
-<br/>
+
 In this post, we will be focusing on on-page SEO; particularly, we will be focusing on adding meta tags to your page.
 
-<br/>
+
 #### What is a meta tag?
 To understand what a meta tag is, you need to know what a normal HTML document looks like.
 ```html
@@ -48,21 +48,21 @@ To understand what a meta tag is, you need to know what a normal HTML document l
 </body>
 ```
 Normally, a HTML document consists of a `<head>` and a `<body>`. The head contains meta tags, title, and other information that helps search engines understand the content of the page that's not shown to users (except for `title` and `favicons`), while the body contains the content that is shown to users.
-<br/>
+
 Hence, the above code shown represents a normal HTML page showing "Hello World" and a `<head>` tag that contains several `<meta>` tags that provide basic information about our website: charset, viewport, and descriptions.
-<br/>
+
 Therefore, a **`<meta>`** tag is a piece of HTML that is used to provide information to search engines about the content of your website. They are not shown to the user but can be crawled by search engines to help them understand the content of your website.
-<br/>
+
 
 There are several types of meta tags (with different names), all of which are pretty self-explanatory, and my goal here is to go through the implementations of meta tags using the 'Next-SEO' plugin.
 
-<br/>
+
 #### next-seo
 The `next-seo` plugin is a plugin that provides SEO functionality to Next.js. It is very easy to use, and it is very powerful.
 
 Here's the github repository of the plugin: <u>[next-seo](https://github.com/garmeeh/next-seo)</u>, and you can also find the documentation on the <u>[npmjs website](https://www.npmjs.com/package/next-seo)</u>.
 
-<br/>
+
 To install the plugin, you can use the following command:
 ```bash
 npm install --save next-seo
@@ -70,11 +70,11 @@ or
 yarn add next-seo
 ```
 depending on what you are using.
-<br/>
+
 After downloading the plugin, you can:
 - Create a default SEO config for all pages
 - Create a custom SEO config for dynamic pages
-<br/>
+
 
 ###### Default SEO config
 We can create a default SEO config for all pages by creating a file called `next-seo.config.js` in the root directory of the project.
@@ -92,7 +92,7 @@ export default SEO;
 ```
 The full list of supported tags can be found on the <u> [next-seo documentation/#next-seo options](https://www.npmjs.com/package/next-seo#nextseo-options)</u>.
 
-<br/>
+
 Then, import both the config and the plugin into your `pages/_app.js` file (since this is the entry point of the application):
 ```js
 import SEO from "../next-seo.config";
@@ -110,7 +110,7 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 ```
-<br/>
+
 Now, when you visit the website and hit 'right click -> inspect,' you will see something like the following in your `<head>` tag:
 ```html
 <head>
@@ -121,9 +121,9 @@ Now, when you visit the website and hit 'right click -> inspect,' you will see s
  <meta property="description" content="The best description ever!">
 </head>
 ```
-<br/>
+
 Congratulations! You have successfully implemented default on-page SEO using the 'Next-SEO' plugin. Now every page will have these meta tags included in its `<head>` tag.
-<br/>
+
 
 ###### Custom SEO config
 For a website with multiple pages and dynamic data, we can create a custom SEO config for each page.
@@ -147,10 +147,10 @@ function MyPage({props}) {
  );
 }
 ```
-<br/>
+
 
 The meta tags will now contain dynamic data from the page component.
-<br/>
+
 
 #### Conclusion
 'next-seo' provides a simple way to implement on-page SEO using `<DefaultSEO>` and `<NextSeo />` components. 
