@@ -10,7 +10,7 @@ export default function Home() {
         <script
           defer
           data-domain="louisunlimited.com"
-          src="http://ec2-3-141-7-122.us-east-2.compute.amazonaws.com/js/script.js"
+          src="https://analytics.louisunlimited.com/js/script.js"
         ></script>
       </Head>
 
