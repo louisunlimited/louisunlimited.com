@@ -7,11 +7,6 @@ export default function Home() {
     <div>
       <Head>
         <title>Louis Qian | Developer</title>
-        <script
-          defer
-          data-domain="louisunlimited.com"
-          src="https://analytics.louisunlimited.com/js/script.js"
-        ></script>
       </Head>
 
       <LandingPage />

@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
       <PlausibleProvider
         domain="louisunlimited.com"
         selfHosted={true}
-        customDomain="http://louisearch.com:8000"
+        customDomain="https://analytics.louisunlimited.com"
       >
         <DefaultSeo {...SEO} />
         <Navbar />
