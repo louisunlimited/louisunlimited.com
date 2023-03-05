@@ -38,7 +38,7 @@ const LandingPage = () => {
           <h1 className="py-2 text-white-700">
             A Student / Independent Developer
           </h1>
-          <p className="py-4 text-white-600 max-w-[70%] m-auto break-all">
+          <p className="py-4 text-white-600 break-all max-w-[70%] m-auto overflow-clip">
             &quot;TXl4cWJrZGV2a2RzeXhjIHl4IHBzeG5zeHEgZHJzYyEgS2MgayBib2drYm4sIGl5ZSBta3ggZnNvZyB3aSBjc2RvIGNka2RjIHJvYm86IHJkZHpjOi8va3hrdmlkc21jLnZ5ZXNjZXh2c3dzZG9uLm15dy92eWVzY2V4dnN3c2Rvbi5teXc7IFMgZ3lldm4gdnlmbyBkeSByb2tiIHBieXcgaXllIHNwIGl5ZSBweWV4biBkcnNjISEhISEhISBSa3p6aSBya211c3hxIQ==&quot;{" "}
             <br></br> -- Louis (This is a secret🤫)
           </p>
