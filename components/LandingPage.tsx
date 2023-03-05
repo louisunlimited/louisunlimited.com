@@ -38,11 +38,9 @@ const LandingPage = () => {
           <h1 className="py-2 text-white-700">
             A Student / Independent Developer
           </h1>
-          <p className="py-4 text-white-600 max-w-[70%] m-auto">
-            &quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident.&quot; <br></br> -- Louis (Yes, I said that)
+          <p className="py-4 text-white-600 max-w-[70%] m-auto break-all">
+            &quot;TXl4cWJrZGV2a2RzeXhjIHl4IHBzeG5zeHEgZHJzYyEgS2MgayBib2drYm4sIGl5ZSBta3ggZnNvZyB3aSBjc2RvIGNka2RjIHJvYm86IHJkZHpjOi8va3hrdmlkc21jLnZ5ZXNjZXh2c3dzZG9uLm15dy92eWVzY2V4dnN3c2Rvbi5teXc7IFMgZ3lldm4gdnlmbyBkeSByb2tiIHBieXcgaXllIHNwIGl5ZSBweWV4biBkcnNjISEhISEhISBSa3p6aSBya211c3hxIQ==&quot;{" "}
+            <br></br> -- Louis (This is a secret🤫)
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-3xl">
             {social.map((item, index) => {
