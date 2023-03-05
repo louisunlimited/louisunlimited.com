@@ -1,0 +1,75 @@
+---
+title: "Deploying an React App locally across all your devices"
+author: "Louis Qian"
+date: "2023-03-05"
+description: "Deploting an app to localhost across multiple devices with pnpm or npm!"
+tags: [pnpm, localhost, ip]
+---
+
+#### Inroduction
+
+Next.js has became one of my favourite frameworks when it comes to big production apps. It's fast, easy to use and has a lot of great features. 
+
+If you are building a responsive app, you might want to test it on multiple devices, your phone, your tablet, your laptop, etc; 
+and the chrome dev tools are often just not good enough, it can't really give you a good idea of how your app will look and feel like on a real device can it?
+
+Also, if you want to test browser support and system support, often times you will need to test it on a real device or inside a virtual machine, all of which cannot share the same localhost as you ran `pnpm run dev`
+
+You might've already know some of the solutions like using [`ngrok`](https://ngrok.com/) or else, while they are indeed super good tools, but they seems a bit overkill for this and I only wanted to test only local network devices.
+
+#### Solution
+
+After some digging, it turns out that you can use your local ip address to access your localhost on other devices.
+
+To start, you will need to find what local ip is your WIFI router using.
+
+You can do this by running `ipconfig` on windows or `ifconfig` on mac.
+
+You should see something like this:
+
+```bash
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+    options=1203<RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP>
+    inet6 ::1 prefixlen 128
+    inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+    ...
+    status: active
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+    ether 00:00:00:00:00:00
+    inet6 fe80::0000:0000:0000:0000%en0 prefixlen 64 secured scopeid 0x4
+    inet 192.1xx.x.x netmask 0xffffff00 broadcast
+    ...
+    status: active
+``` 
+
+Mostlikely, the ip address you are looking for is the one under `inet` for `en0` or `en1` or else. In the above example, it's `192.1xx.x.x`
+
+##### If you don't have prior knowledge on this and you have trouble locating the ip address used for your wifi router, try the following command:
+
+```bash
+$ networksetup -listallhardwareports
+```
+
+You should see something like this along the lines:
+
+```bash
+Hardware Port: Wi-Fi
+Device: en0
+Ethernet Address: 00:00:00:00:00:00
+```
+
+Now you know your local WIFI is using `en0` as the device, you can run the following command to get the ip address for `en0`:
+
+```bash
+$ ifconfig en0
+```
+
+or goback to the first method and run `ipconfig` or `ifconfig` to find the ip address under `inet` for `en0`.
+
+#### Result
+
+Now, you can run `pnpm run dev -H 192.1xx.x.x` or `npm run dev -H 192.1xx.x.x` to start your app on your local ip address and access the app on anyother server in the same network by going to `192.1xx.x.x:3000`.
+
+You may also apply optional ports after the ip address, for example, `192.1xx.x.x:1234` to access the app on port 1234.
+
+😶‍🌫️ Happy coding!
