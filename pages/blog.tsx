@@ -18,11 +18,11 @@ export default function blog({ posts }) {
         <h2 className="uppercase p-5 text-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent w-max">
           Blog Posts
         </h2>
-        <div className="h-full w-full p-5">
+        <div className="h-full w-full px-5">
           {posts.map((post, index) => {
             return (
               <div key={index} className="flex flex-col pt-5">
-                <h4 className="text-3xl font-bold text-slate-200">
+                <h4 className="text-2xl md:text-3xl font-bold text-slate-200">
                   {post.frontMatter.title}
                 </h4>
                 <p className="">{post.frontMatter.date}</p>
