@@ -120,7 +120,7 @@ const Navbar = () => {
             </ul>
             <div className="pt-40">
               <p className="uppercase tracking-widest text-[#5651e5]">
-                Lect&apos;s connect
+                Let&apos;s connect
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%] text-2xl">
                 {social.map((item, index) => {
