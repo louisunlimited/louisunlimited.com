@@ -33,12 +33,15 @@ const LandingPage: React.FC = () => {
               </a>
             </span>
           </div>
-          <div className="pb-10 md:pb-0 py-2 text-3xl md:text-5xl font-bold text-white-700">
+          <div className="py-2 text-3xl md:text-5xl font-bold text-white-700">
             A Student / Independent Developer
           </div>
           <p className="py-4 text-white-600 break-all max-w-[70%] m-auto overflow-clip md:block hidden">
             &quot;TXl4cWJrZGV2a2RzeXhjIHl4IHBzeG5zeHEgZHJzYyEgS2MgayBib2drYm4sIGl5ZSBta3ggZnNvZyB3aSBjc2RvIGNka2RjIHJvYm86IHJkZHpjOi8va3hrdmlkc21jLnZ5ZXNjZXh2c3dzZG9uLm15dy92eWVzY2V4dnN3c2Rvbi5teXc7IFMgZ3lldm4gdnlmbyBkeSByb2tiIHBieXcgaXllIHNwIGl5ZSBweWV4biBkcnNjISEhISEhISBSa3p6aSBya211c3hxIQ==&quot;{" "}
             <br></br> -- Louis (This is a secret🤫)
+          </p>
+          <p className="block md:hidden py-2 text-palewhite/50 px-5">
+            Open this site on Desktop for a secret message!
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-3xl">
             {social.map((item, index) => {
