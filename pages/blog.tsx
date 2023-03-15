@@ -5,9 +5,20 @@ import matter from "gray-matter";
 import Link from "next/link";
 // SEO support
 import { NextSeo } from "next-seo";
+import { NextPage } from "next";
+
+interface blogProps {
+  posts: {
+    frontMatter: {
+      title: string;
+      date: string;
+    };
+    slug: string;
+  }[];
+}
 
 // `/blog` main route
-export default function blog({ posts }) {
+const blog: NextPage<blogProps> = ({ posts }) => {
   return (
     <>
       <NextSeo
@@ -25,7 +36,7 @@ export default function blog({ posts }) {
                 <h4 className="text-2xl md:text-3xl font-bold text-slate-200">
                   {post.frontMatter.title}
                 </h4>
-                <p className="">{post.frontMatter.date}</p>
+                <p>{post.frontMatter.date}</p>
                 <Link href={`/blogs/${post.slug}`}>
                   <p className="underline cursor-pointer w-max">Read More</p>
                 </Link>
@@ -36,7 +47,9 @@ export default function blog({ posts }) {
       </div>
     </>
   );
-}
+};
+
+export default blog;
 
 // getStaticProps to render static content through filesystem
 export async function getStaticProps() {

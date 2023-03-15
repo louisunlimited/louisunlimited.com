@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { social } from "../public/data";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {

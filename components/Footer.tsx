@@ -3,7 +3,7 @@ import React from "react";
 
 import { social } from "../public/data";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="py-12">
       <div className="container mx-auto">

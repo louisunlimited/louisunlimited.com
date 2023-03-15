@@ -13,8 +13,23 @@ import "highlight.js/styles/atom-one-dark.css";
 // SEO support
 import { NextSeo } from "next-seo";
 import { ArticleJsonLd } from "next-seo";
+import { NextPage } from "next";
 
-const PlogPage = ({ frontMatter, source, slug }) => {
+// interface for props
+interface PlogPageProps {
+  frontMatter: {
+    title: string;
+    author: string;
+    date: string;
+    tags: string[];
+    description: string;
+    image: string;
+  };
+  source: any;
+  slug: string;
+}
+
+const PlogPage: NextPage<PlogPageProps> = ({ frontMatter, source, slug }) => {
   return (
     <>
       <NextSeo

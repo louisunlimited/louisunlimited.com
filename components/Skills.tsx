@@ -2,7 +2,7 @@ import React from "react";
 import { skills } from "../public/data";
 import Image from "next/image";
 
-const Skills = () => {
+const Skills: React.FC = () => {
   return (
     <section className="bg-[#0d0d18] py-12">
       <div className=" container mx-auto">

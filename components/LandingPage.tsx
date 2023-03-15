@@ -7,9 +7,7 @@ import planet1 from "../public/assets/Planets/Planet1.svg";
 import planet2 from "../public/assets/Planets/Planet2.svg";
 import planet3 from "../public/assets/Planets/Planet3.svg";
 
-import { AiOutlineMail } from "react-icons/ai";
-
-const LandingPage = () => {
+const LandingPage: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   //get mouse position
