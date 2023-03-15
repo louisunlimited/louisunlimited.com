@@ -25,18 +25,18 @@ const LandingPage: React.FC = () => {
     <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
-          <h1 className="py-4 text-white-700">
+          <div className="py-4 text-white-700 text-4xl md:text-6xl font-bold">
             Hi, I&apos;m&nbsp;
             <span className="hover:animate-pulse">
               <a className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-default">
                 Louis
               </a>
             </span>
-          </h1>
-          <h1 className="py-2 text-white-700">
+          </div>
+          <div className="pb-10 md:pb-0 py-2 text-3xl md:text-5xl font-bold text-white-700">
             A Student / Independent Developer
-          </h1>
-          <p className="py-4 text-white-600 break-all max-w-[70%] m-auto overflow-clip">
+          </div>
+          <p className="py-4 text-white-600 break-all max-w-[70%] m-auto overflow-clip md:block hidden">
             &quot;TXl4cWJrZGV2a2RzeXhjIHl4IHBzeG5zeHEgZHJzYyEgS2MgayBib2drYm4sIGl5ZSBta3ggZnNvZyB3aSBjc2RvIGNka2RjIHJvYm86IHJkZHpjOi8va3hrdmlkc21jLnZ5ZXNjZXh2c3dzZG9uLm15dy92eWVzY2V4dnN3c2Rvbi5teXc7IFMgZ3lldm4gdnlmbyBkeSByb2tiIHBieXcgaXllIHNwIGl5ZSBweWV4biBkcnNjISEhISEhISBSa3p6aSBya211c3hxIQ==&quot;{" "}
             <br></br> -- Louis (This is a secret🤫)
           </p>
