@@ -15,19 +15,13 @@ const Navbar = () => {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <div className="p-10">
           <Link href="/">
-            <div className="text-lg cursor-pointer">
-              louis<a className="text-lg font-extrabold">Unlimited</a>
+            <div className="text-xl cursor-pointer">
+              louis<a className="text-xl font-extrabold">Unlimited</a>
             </div>
           </Link>
         </div>
         <div className="p-5">
           <ul className="hidden md:flex list-none">
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
-                {" "}
-                Home{" "}
-              </li>
-            </Link>
             <Link href="/blog">
               <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
                 Posts
@@ -43,11 +37,6 @@ const Navbar = () => {
                 Search
               </li>
             </Link>
-            {/* <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer line-through">
-                Contact
-              </li>
-            </Link> */}
           </ul>
           <div onClick={handleNav} className="md:hidden">
             <AiOutlineMenu size={25} />
@@ -69,9 +58,11 @@ const Navbar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-              <div className="text-md">
-                louis<a className="text-lg font-extrabold">Unlimited</a>
-              </div>
+              <Link href="/">
+                <div className="text-md" onClick={handleNav}>
+                  louis<a className="text-lg font-extrabold">Unlimited</a>
+                </div>
+              </Link>
               <div onClick={handleNav} className="p-5 cursor-pointer">
                 <AiOutlineClose />
               </div>
@@ -82,12 +73,6 @@ const Navbar = () => {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase list-none">
-              <Link href="/">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Home
-                </li>
-              </Link>
-
               <Link href="/blog">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
                   Posts
