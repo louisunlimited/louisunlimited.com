@@ -7,4 +7,6 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-module.exports = withPlausibleProxy(module.exports);
+module.exports = withPlausibleProxy({
+  customDomain: "https://analytics.louisunlimited.com",
+})(module.exports);
