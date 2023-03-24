@@ -30,19 +30,26 @@ const blog: NextPage<blogProps> = ({ posts }) => {
           Blog Posts
         </h2>
         <div className="h-full w-full px-5">
-          {posts.map((post, index) => {
-            return (
-              <div key={index} className="flex flex-col pt-5">
-                <h4 className="text-2xl md:text-3xl font-bold text-slate-200">
-                  {post.frontMatter.title}
-                </h4>
-                <p>{post.frontMatter.date}</p>
-                <Link href={`/blogs/${post.slug}`}>
-                  <p className="underline cursor-pointer w-max">Read More</p>
-                </Link>
-              </div>
-            );
-          })}
+          {posts
+            .sort((a, b) => {
+              return (
+                Number(new Date(b.frontMatter.date)) -
+                Number(new Date(a.frontMatter.date))
+              );
+            })
+            .map((post, index) => {
+              return (
+                <div key={index} className="flex flex-col pt-5">
+                  <h4 className="text-2xl md:text-3xl font-bold text-slate-200">
+                    {post.frontMatter.title}
+                  </h4>
+                  <p>{post.frontMatter.date}</p>
+                  <Link href={`/blogs/${post.slug}`}>
+                    <p className="underline cursor-pointer w-max">Read More</p>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
