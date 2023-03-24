@@ -1,0 +1,190 @@
+---
+title: "Update Docker Image Without Downtime"
+author: "Louis Qian"
+date: "2023-03-24"
+description: "Learn how to update your Docker image without downtime with docker compose."
+tags: [Docker, docker compose]
+image: ""
+---
+
+#### Introduction
+
+Have you ever deployed your app with docker compose and then wanted to scale it up or down by replacing it with a new docker image? 
+At the same time, you don't want to take down your app for the new image to be built and deployed.
+
+In this article, we will learn how to deploy an app using docker compose that can be scaled up and down without close to zero downtime.
+
+> Note: This article assumes you have a basic understanding of docker and docker compose.
+
+> This approach works on frontend apps best. Backend apps with heavy logic and database interactions remain untested and might not work as expected.
+
+#### Prerequisites
+
+Make sure you have docker and docker compose installed on your machine. Note that `docker-compose` will be deprecated in the future, so you might want to use the `docker compose` plugin instead.
+
+#### Setup
+
+Let's take a look at the current `docker-compose.yml` file.
+
+```yaml
+version: "3.9"
+services:
+  app:
+    image: louis_app:1.0.0
+    ports:
+      - "3000:3000"
+```
+
+The `app` service is the app that I want to scale with docker compose. It is currently running on port `3000` and the image is `louis_app:1.0.0`.
+
+Basically, the thing that we are trying to achieve is to:
+
+1. Build a new image with the new version of the app. Let's say `louis_app:1.0.1`.
+2. Update the `docker-compose.yml` file to use the new image.
+3. Somehow replacing the old image with the new image without downtime.
+
+The key to this approach is `nginx`. We will use `nginx` as a reverse proxy to route traffic between the replicas inside this docker cotainer.
+
+Nginx will automatically route traffic to the new replica when it is ready. This way, we can scale up and down without downtime.
+
+#### Step 1: Add Nginx
+
+First, we need to add `nginx` to our `docker-compose.yml` file as a service.
+
+```yaml
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+    image: louis_app:1.0.0
+    ports:
+      - "3000"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+```
+
+In the above `docker-compose.yml` file, we added a new service called `nginx` to route our `app` service. There's also a new volume called `./conf.d:/etc/nginx/conf.d`. We can use this volume to configure `nginx`. 
+
+Note that we also added a `depends_on` field to the `nginx` service. This field tells `docker-compose` to start the `nginx` service after the `app` service is ready.
+
+#### Step 2: Configure Nginx
+
+Now that we have `nginx` in our `docker-compose.yml` file, we need to configure it. We will use the `./conf.d` volume to configure `nginx`.
+
+Create a new file called `nginx.conf` in the `./conf.d` folder.
+
+```bash
+server {
+    listen 3000;
+
+    location / {
+        proxy_pass http://app:3000;
+    }
+}
+```
+
+The above `nginx.conf` file is the configuration file for `nginx`. It tells `nginx` to listen on port `3000` and route all traffic to the `app` service via docker network.
+
+#### Step 3: Scale Up
+
+Now the fun part begins. Let's say we want to scale up our app to 2 replicas. We can do that by running the following docker compose command.
+
+```bash
+docker-compose up -d --build --scale app=2 --no-recreate
+```
+
+The above command will build a new image with `--build` with the new version of the app and scale up the app to 2 replicas with `--scale app=2`.
+
+The `--no-recreate` flag tells `docker-compose` to not recreate the `nginx` service. This is because we don't want to replace the `nginx` service with a new one.
+
+Now you should see 2 replicas of the app running on port `3000/tcp`. You can also see the single `nginx` service running on port `0.0.0.0->80/80tcp`.
+
+If you now go to `localhost:80`, you should see the app running without any issues.
+
+#### Step 4: Scale Down
+
+Now that you have the newer version of the app running, you can scale down the app to 1 replica to remove the old version of the app.
+
+First stop and remove the old app by running the following command.
+
+```bash
+docker stop $old_app_container_id
+
+docker rm $old_app_container_id
+```
+
+Then, scale down the app to 1 replica.
+
+```bash
+docker-compose up -d --build --scale app=1 --no-recreate
+```
+
+Now you should see only 1 replica of the app running on port `3000/tcp` and the app is still running on `localhost:80`.
+
+#### Conclusion
+
+Nginx combined with Docker makes such a powerful combination. 
+
+#### Bonus: update.sh
+
+If you want to automate the process of updating the app, you can create a bash script called `update.sh` and put it in the root directory of your project.
+
+Source from [tines.com](https://www.tines.com/blog/simple-zero-downtime-deploys-with-nginx-and-docker-compose) with minor changes.
+
+```bash
+#!/bin/bash
+
+reload_nginx() {  
+  docker exec $your_nginx_name /usr/sbin/nginx -s reload  
+}
+
+zero_downtime_deploy() {  
+  service_name=$your_app_name
+  old_container_id=$(docker ps -f name=$service_name -q | tail -n1)
+
+  # bring a new container online, running new code  
+  # (nginx continues routing to the old container only)  
+  docker-compose up -d --no-deps --scale $service_name=2 --no-recreate $service_name
+
+  # wait for new container to be available  
+  new_container_id=$(docker ps -f name=$service_name -q | head -n1)
+  new_container_ip=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $new_container_id)
+  curl --silent --include --retry-connrefused --retry 30 --retry-delay 1 --fail http://$new_container_ip:3000/ || exit 1
+
+  # start routing requests to the new container (as well as the old)  
+  reload_nginx
+
+  # take the old container offline  
+  docker stop $old_container_id
+  docker rm $old_container_id
+
+  docker-compose up -d --no-deps --scale $service_name=1 --no-recreate $service_name
+
+  # stop routing requests to the old container  
+  reload_nginx  
+}
+
+echo "Deploying new version of $your_app_name"
+zero_downtime_deploy
+```
+
+> Make sure to change the `your_nginx_name` and `your_app_name` to the name of your `nginx` and `app` container and change port 3000 to whatever port you are using.
+
+Then you can run the following command to update the app.
+
+```bash
+# make the file executable
+chmod +x update.sh
+# run the script
+./update.sh
+```
+
+Happy coding! 🚀
