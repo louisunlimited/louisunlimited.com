@@ -6,6 +6,7 @@ import Image from "next/image";
 import planet1 from "../public/assets/Planets/Planet1.svg";
 import planet2 from "../public/assets/Planets/Planet2.svg";
 import planet3 from "../public/assets/Planets/Planet3.svg";
+import { usePlausible } from "next-plausible";
 
 const LandingPage: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -21,6 +22,8 @@ const LandingPage: React.FC = () => {
     };
   }, []);
 
+  const plausible = usePlausible();
+
   return (
     <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
@@ -28,7 +31,10 @@ const LandingPage: React.FC = () => {
           <div className="py-4 text-white-700 text-4xl md:text-6xl font-bold">
             Hi, I&apos;m&nbsp;
             <span className="hover:animate-pulse">
-              <a className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-default">
+              <a
+                className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-default"
+                onClick={() => plausible("Doom Button Click")}
+              >
                 Louis
               </a>
             </span>
