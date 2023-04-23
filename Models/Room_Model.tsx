@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.1.4 public/push.gltf --shadows --transform --types
 */
 
 import * as THREE from "three";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   useGLTF,
   PerspectiveCamera,

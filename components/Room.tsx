@@ -4,7 +4,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import { OrbitControls, Stars } from "@react-three/drei";
 import CanvasLoader from "@/utils/Loader";
-import { Room_Model } from "@/Models/Room_Model";
+import { Room_Model } from "@/models/Room_Model";
 import { stagger, useAnimate } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
