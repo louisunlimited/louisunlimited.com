@@ -8,7 +8,11 @@ import { Room_Model } from "@/models/Room_Model";
 import { stagger, useAnimate } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
-
+import dynamic from "next/dynamic";
+// force client side rendering
+const LoadingScreen = dynamic(() => import("./LoadingScreen"), {
+  ssr: false,
+});
 const Room: React.FC = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   useEffect(() => {
@@ -28,6 +32,7 @@ const Room: React.FC = () => {
   }, []);
 
   const [showSocials, setShowSocials] = useState(false);
+  const [enterRoom, setEnterRoom] = useState(false);
 
   return (
     <div className="h-screen w-screen">
@@ -37,41 +42,49 @@ const Room: React.FC = () => {
         shadows
         gl={{ logarithmicDepthBuffer: true }}
       >
-        <Suspense fallback={<CanvasLoader />}>
-          <ambientLight intensity={0.15} />
-          <directionalLight
-            position={[-31, 25, -30]}
-            intensity={0.2}
-            castShadow
-          />
-          <motion.group
-            position={[0, 0, 0]}
-            rotation={[mouse.y / 800_0, mouse.x / 1000_0, 0]}
-          >
-            <ResponsiveWrapper>
-              <Room_Model setSocialOpen={setShowSocials} />
-            </ResponsiveWrapper>
-          </motion.group>
-          <OrbitControls
-            enableZoom={false}
-            minAzimuthAngle={(Math.PI * 3) / 2}
-            maxAzimuthAngle={Math.PI / 4 - Math.PI / 4}
-            minPolarAngle={Math.PI / 6}
-            maxPolarAngle={Math.PI / 2}
-            enablePan={false}
-            enableDamping
-          />
-          <Stars
-            radius={100}
-            depth={50}
-            count={5000}
-            factor={4}
-            saturation={0}
-            fade
-            speed={1}
-          />
+        <Suspense fallback={null}>
+          {enterRoom && (
+            <>
+              <ambientLight intensity={0.15} />
+              <directionalLight
+                position={[-31, 25, -30]}
+                intensity={0.2}
+                castShadow
+              />
+              <motion.group
+                position={[0, 0, 0]}
+                rotation={[mouse.y / 800_0, mouse.x / 1000_0, 0]}
+              >
+                <ResponsiveWrapper>
+                  <Room_Model setSocialOpen={setShowSocials} />
+                </ResponsiveWrapper>
+              </motion.group>
+              <OrbitControls
+                enableZoom={false}
+                minAzimuthAngle={(Math.PI * 3) / 2}
+                maxAzimuthAngle={Math.PI / 4 - Math.PI / 4}
+                minPolarAngle={Math.PI / 6}
+                maxPolarAngle={Math.PI / 2}
+                enablePan={false}
+                enableDamping
+              />
+              <Stars
+                radius={100}
+                depth={50}
+                count={5000}
+                factor={4}
+                saturation={0}
+                fade
+                speed={1}
+              />
+            </>
+          )}
         </Suspense>
       </Canvas>
+      <LoadingScreen
+        enterRoom={enterRoom}
+        onEnterRoom={() => setEnterRoom(true)}
+      />
       <SocialContainer showSocials={showSocials} />
     </div>
   );
@@ -85,8 +98,14 @@ interface SocialContainerProps {
 const SocialContainer: React.FC<SocialContainerProps> = ({ showSocials }) => {
   const scope = useMenuAnimation(showSocials);
   return (
-    <nav ref={scope}>
-      <ul className="flex flex-col absolute bottom-0 right-0 gap-6 text-white font-bold text-4xl p-5">
+    <div ref={scope}>
+      <ul
+        className={
+          showSocials
+            ? `flex flex-col absolute bottom-0 right-0 gap-6 text-white font-bold text-4xl p-5`
+            : `hidden`
+        }
+      >
         <li>
           <Link href="https://github.com/louisunlimited" target="_blank">
             <FaGithub />
@@ -101,7 +120,7 @@ const SocialContainer: React.FC<SocialContainerProps> = ({ showSocials }) => {
           </Link>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 
