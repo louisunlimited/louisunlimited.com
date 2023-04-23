@@ -3,16 +3,12 @@ import { Canvas, useThree } from "@react-three/fiber";
 
 import { motion } from "framer-motion-3d";
 import { OrbitControls, Stars } from "@react-three/drei";
-import CanvasLoader from "@/utils/Loader";
 import { Room_Model } from "@/models/Room_Model";
 import { stagger, useAnimate } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-// force client side rendering
-const LoadingScreen = dynamic(() => import("./LoadingScreen"), {
-  ssr: false,
-});
+import LoadingScreen from "./LoadingScreen";
+
 const Room: React.FC = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   useEffect(() => {
