@@ -1,29 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       backgroundImage: {
-        "space-backdrop": "url('../public/space-bg.png')",
-      },
-      transitionTimingFunction: {
-        "planet-expo": "cubic-bezier(0.07, 1.17, 1, 1)",
-      },
-      colors: {
-        palewhite: "#C0C9D1",
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            color: "#C0C9D1",
-            pre: null,
-          },
-        },
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [],
+}
