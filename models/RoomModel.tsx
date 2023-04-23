@@ -181,7 +181,7 @@ interface ModelProps {
   setSocialOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Room_Model: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
+export const RoomModel: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
   const { nodes, materials } = useGLTF("/Room_Model.glb") as GLTFResult;
   const glassMaterial = useMemo(
     () =>

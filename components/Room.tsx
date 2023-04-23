@@ -3,7 +3,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 
 import { motion } from "framer-motion-3d";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { Room_Model } from "@/models/RoomModel";
+import { RoomModel } from "@/models/RoomModel";
 import { stagger, useAnimate } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
@@ -52,7 +52,7 @@ const Room: React.FC = () => {
                 rotation={[mouse.y / 800_0, mouse.x / 1000_0, 0]}
               >
                 <ResponsiveWrapper>
-                  <Room_Model setSocialOpen={setShowSocials} />
+                  <RoomModel setSocialOpen={setShowSocials} />
                 </ResponsiveWrapper>
               </motion.group>
               <OrbitControls
