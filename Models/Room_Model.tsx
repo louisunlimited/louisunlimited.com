@@ -182,7 +182,7 @@ interface ModelProps {
 }
 
 export const Room_Model: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
-  const { nodes, materials } = useGLTF("/push-transformed.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/Room_Model.glb") as GLTFResult;
   const glassMaterial = useMemo(
     () =>
       new THREE.MeshPhysicalMaterial({
