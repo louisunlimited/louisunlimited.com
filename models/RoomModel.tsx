@@ -12,6 +12,7 @@ import {
   useCursor,
 } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { usePlausible } from "next-plausible";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -198,6 +199,9 @@ export const RoomModel: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
   );
   const [hovered, setHovered] = useState(false);
   useCursor(hovered, "pointer");
+
+  const plausible = usePlausible();
+
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
@@ -220,6 +224,7 @@ export const RoomModel: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
                 }
               }}
               onClick={() => {
+                plausible("DO_NOT_PUSH");
                 // @ts-ignore
                 nodes.Button_Top.material.emissive = new THREE.Color(0xff0000);
                 setTimeout(() => {
