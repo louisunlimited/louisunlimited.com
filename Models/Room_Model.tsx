@@ -1630,4 +1630,4 @@ export const Room_Model: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
   );
 };
 
-useGLTF.preload("/push-transformed.glb");
+useGLTF.preload("/Room_Model.glb");
