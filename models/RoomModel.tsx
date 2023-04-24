@@ -232,11 +232,11 @@ export const RoomModel: React.FC<ModelProps> = ({ props, setSocialOpen }) => {
                   nodes.Button_Top.material.emissive = new THREE.Color(
                     0x000000
                   );
-                }, 3000);
+                }, 5000);
                 setSocialOpen(true);
                 setTimeout(() => {
                   setSocialOpen(false);
-                }, 3000);
+                }, 5000);
               }}
             />
             <mesh
