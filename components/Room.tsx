@@ -5,7 +5,7 @@ import { motion } from "framer-motion-3d";
 import { OrbitControls, Stars } from "@react-three/drei";
 import { RoomModel } from "@/models/RoomModel";
 import { stagger, useAnimate } from "framer-motion";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import LoadingScreen from "./LoadingScreen";
 
@@ -113,6 +113,11 @@ const SocialContainer: React.FC<SocialContainerProps> = ({ showSocials }) => {
             target="_blank"
           >
             <FaLinkedinIn />
+          </Link>
+        </li>
+        <li>
+          <Link href="https://twitter.com/louis_unlimited" target="_blank">
+            <FaTwitter />
           </Link>
         </li>
       </ul>
