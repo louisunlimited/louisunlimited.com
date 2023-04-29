@@ -28,6 +28,7 @@ export default function Home() {
           title: "Louis Qian | Developer",
           description:
             "A passionate developer who loves to explore new technologies and build A LOT OF cool stuff.",
+          type: "website",
           images: [
             {
               url: "https://louisunlimited.com/og_image.png",
