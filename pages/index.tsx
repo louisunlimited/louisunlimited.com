@@ -22,6 +22,18 @@ export default function Home() {
             name: "theme-color",
             content: "#090711",
           },
+          {
+            name: "twitter:image",
+            content: "https://louisunlimited.com/og_image.png",
+          },
+          {
+            name: "twitter:image:alt",
+            content: "Louis Qian | Developer",
+          },
+          {
+            name: "twitter:title",
+            content: "Louis Qian | Developer",
+          },
         ]}
         openGraph={{
           url: "https://louisunlimited.com",
