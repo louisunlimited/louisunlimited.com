@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         selfHosted={true}
         customDomain="https://analytics.louisunlimited.com"
       >
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </PlausibleProvider>
     </>
   );
