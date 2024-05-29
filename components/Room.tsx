@@ -108,10 +108,7 @@ const SocialContainer: React.FC<SocialContainerProps> = ({ showSocials }) => {
           </Link>
         </li>
         <li>
-          <Link
-            href="https://www.linkedin.com/in/yu-qian-661741223/"
-            target="_blank"
-          >
+          <Link href="https://www.linkedin.com/in/louis-qian" target="_blank">
             <FaLinkedinIn />
           </Link>
         </li>
