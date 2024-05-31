@@ -1,7 +1,5 @@
-import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
-// decrease first load js bundle from 330kb to 76kb
 const Room = dynamic(() => import("@/components/Room"), { ssr: false });
 import { NextSeo } from "next-seo";
 
