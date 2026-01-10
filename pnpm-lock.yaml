@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@react-three/drei':
         specifier: ^9.65.5
-        version: 9.65.5(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(@types/three@0.150.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
+        version: 9.65.5(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(@types/three@0.150.2)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
       '@react-three/fiber':
         specifier: ^8.12.2
-        version: 8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
+        version: 8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
       '@types/node':
         specifier: 18.18.5
         version: 18.18.5
@@ -34,19 +34,19 @@ importers:
         version: 15.0.0(eslint@9.0.0)(typescript@5.2.2)
       framer-motion:
         specifier: ^10.12.4
-        version: 10.12.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 10.12.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       framer-motion-3d:
         specifier: ^10.12.4
-        version: 10.12.4(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
+        version: 10.12.4(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
       next:
         specifier: 14.2.35
-        version: 14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       next-plausible:
         specifier: ^3.7.2
-        version: 3.7.2(next@14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.7.2(next@14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       next-seo:
         specifier: ^6.0.0
-        version: 6.0.0(next@14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 6.0.0(next@14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       postcss:
         specifier: 8.4.31
         version: 8.4.31
@@ -54,8 +54,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: 18.3.1
+        version: 18.3.1(react@18.2.0)
       react-icons:
         specifier: ^4.8.0
         version: 4.8.0(react@18.2.0)
@@ -1766,10 +1766,10 @@ packages:
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-dom@18.2.0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
 
   react-icons@4.8.0:
     resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
@@ -1880,8 +1880,8 @@ packages:
   scheduler@0.21.0:
     resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
 
-  scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -2425,23 +2425,23 @@ snapshots:
       '@react-spring/types': 9.6.1
       react: 18.2.0
 
-  '@react-spring/three@9.6.1(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(react@18.2.0)(three@0.152.2)':
+  '@react-spring/three@9.6.1(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(react@18.2.0)(three@0.152.2)':
     dependencies:
       '@react-spring/animated': 9.6.1(react@18.2.0)
       '@react-spring/core': 9.6.1(react@18.2.0)
       '@react-spring/shared': 9.6.1(react@18.2.0)
       '@react-spring/types': 9.6.1
-      '@react-three/fiber': 8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
+      '@react-three/fiber': 8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
       react: 18.2.0
       three: 0.152.2
 
   '@react-spring/types@9.6.1': {}
 
-  '@react-three/drei@9.65.5(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(@types/three@0.150.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)':
+  '@react-three/drei@9.65.5(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(@types/three@0.150.2)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)':
     dependencies:
       '@babel/runtime': 7.21.0
-      '@react-spring/three': 9.6.1(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(react@18.2.0)(three@0.152.2)
-      '@react-three/fiber': 8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
+      '@react-spring/three': 9.6.1(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(react@18.2.0)(three@0.152.2)
+      '@react-three/fiber': 8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
       '@use-gesture/react': 10.2.26(react@18.2.0)
       camera-controls: 2.3.4(three@0.152.2)
       detect-gpu: 5.0.20
@@ -2463,24 +2463,24 @@ snapshots:
       utility-types: 3.10.0
       zustand: 3.7.2(react@18.2.0)
     optionalDependencies:
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
     transitivePeerDependencies:
       - '@types/three'
 
-  '@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)':
+  '@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)':
     dependencies:
       '@babel/runtime': 7.21.0
       '@types/react-reconciler': 0.26.7
       its-fine: 1.1.0(react@18.2.0)
       react: 18.2.0
       react-reconciler: 0.27.0(react@18.2.0)
-      react-use-measure: 2.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-use-measure: 2.1.1(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       scheduler: 0.21.0
       suspend-react: 0.0.8(react@18.2.0)
       three: 0.152.2
       zustand: 3.7.2(react@18.2.0)
     optionalDependencies:
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
 
   '@rtsao/scc@1.1.0': {}
 
@@ -3218,7 +3218,7 @@ snapshots:
       '@typescript-eslint/parser': 5.59.0(eslint@9.0.0)(typescript@5.2.2)
       eslint: 9.0.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0)(eslint@9.0.0)
+      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.0.0)
       eslint-plugin-react: 7.37.5(eslint@9.0.0)
@@ -3237,12 +3237,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0)(eslint@9.0.0):
+  eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.13.0
       eslint: 9.0.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0))(eslint@9.0.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0)
       get-tsconfig: 4.5.0
       globby: 13.1.4
@@ -3255,25 +3255,25 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0))(eslint@9.0.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 5.59.0(eslint@9.0.0)(typescript@5.2.2)
       eslint: 9.0.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0)(eslint@9.0.0)
+      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0))(eslint@9.0.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 5.59.0(eslint@9.0.0)(typescript@5.2.2)
       eslint: 9.0.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0)(eslint@9.0.0)
+      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3288,7 +3288,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.0.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.0.0)
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.59.0(eslint@9.0.0)(typescript@5.2.2))(eslint@9.0.0))(eslint@9.0.0))(eslint@9.0.0)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -3481,22 +3481,22 @@ snapshots:
 
   fraction.js@4.2.0: {}
 
-  framer-motion-3d@10.12.4(@react-three/fiber@8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2):
+  framer-motion-3d@10.12.4(@react-three/fiber@8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2):
     dependencies:
-      '@react-three/fiber': 8.12.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.152.2)
-      framer-motion: 10.12.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-three/fiber': 8.12.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(three@0.152.2)
+      framer-motion: 10.12.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       react-merge-refs: 2.0.1
       three: 0.152.2
 
-  framer-motion@10.12.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  framer-motion@10.12.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       tslib: 2.5.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
 
   fs.realpath@1.0.0: {}
 
@@ -4009,19 +4009,19 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-plausible@3.7.2(next@14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  next-plausible@3.7.2(next@14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
-      next: 14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      next: 14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
 
-  next-seo@6.0.0(next@14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  next-seo@6.0.0(next@14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
-      next: 14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      next: 14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
 
-  next@14.2.35(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  next@14.2.35(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       '@next/env': 14.2.35
       '@swc/helpers': 0.5.5
@@ -4030,7 +4030,7 @@ snapshots:
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       styled-jsx: 5.1.1(react@18.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.2.33
@@ -4231,11 +4231,11 @@ snapshots:
       prop-types: 15.8.1
       react: 18.2.0
 
-  react-dom@18.2.0(react@18.2.0):
+  react-dom@18.3.1(react@18.2.0):
     dependencies:
       loose-envify: 1.4.0
       react: 18.2.0
-      scheduler: 0.23.0
+      scheduler: 0.23.2
 
   react-icons@4.8.0(react@18.2.0):
     dependencies:
@@ -4253,11 +4253,11 @@ snapshots:
       react: 18.2.0
       scheduler: 0.21.0
 
-  react-use-measure@2.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-use-measure@2.1.1(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       debounce: 1.2.1
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
 
   react@18.2.0:
     dependencies:
@@ -4376,7 +4376,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  scheduler@0.23.0:
+  scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
 
